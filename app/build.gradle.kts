@@ -42,6 +42,13 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:common"))
+    implementation(project(":core:datastore"))
+    implementation(project(":core:ui"))
+    implementation(project(":feature:connection"))
+    implementation(project(":feature:ads"))
+    implementation(project(":vpn:libxray"))
+    implementation(project(":vpn:service"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
