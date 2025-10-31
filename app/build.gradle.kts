@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.sirius_shield"
+    namespace = "org.donmacond.anvil"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.sirius_shield"
+        applicationId = "org.donmacond.anvil"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
@@ -29,13 +29,6 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
     buildFeatures {
         compose = true
     }
@@ -45,6 +38,7 @@ dependencies {
     implementation(project(":core:common"))
     implementation(project(":core:datastore"))
     implementation(project(":core:ui"))
+    implementation(project(":core:navigation"))
     implementation(project(":feature:connection"))
     implementation(project(":feature:ads"))
     implementation(project(":vpn:libxray"))
@@ -54,40 +48,20 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-    implementation(libs.firebase.config)
-    implementation(libs.androidx.ui.text.google.fonts)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
-    debugImplementation(libs.retrofit)
-    debugImplementation(libs.retrofit.converter.gson)
-    debugImplementation(libs.gson)
-    debugImplementation(libs.glide)
-    implementation(libs.okhttp)
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.navigation.compose)
+
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
     implementation(libs.koin.androidx.compose.navigation)
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.applovin.sdk)
-    implementation(libs.ironsource.sdk)
-    implementation(libs.admob)
-    implementation(libs.play.billing)
-    implementation(libs.room.runtime)
-    implementation(libs.room.ktx)
-    kapt(libs.room.compiler) {
-        exclude(group = "com.intellij", module = "annotations")
-    }
-    implementation(libs.lottie.compose)
-    implementation(libs.datastore)
+
+    implementation(libs.firebase.config)
+    implementation(libs.androidx.material3)
+
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+
+
+
 
 }

@@ -22,5 +22,16 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "sirius-shield"
+rootProject.name = "anvil"
 include(":app")
+// ---------- CORE ----------
+include(":core:common")
+include(":core:datastore")
+include(":core:ui")
+include(":core:navigation")
+// ---------- FEATURES ----------
+include(":feature:connection")
+include(":feature:ads")
+// ---------- VPN ----------
+include(":vpn:libxray")
+include(":vpn:service")
